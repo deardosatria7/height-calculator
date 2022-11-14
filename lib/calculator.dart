@@ -15,10 +15,10 @@ class Calculator {
 
   String calculateBMI() {
     if (gender == Gender.male) {
-      double _bmi = ((fatherHeight + motherHeight) / 2) + 7;
+      double _bmi = ((fatherHeight + motherHeight) / 2) + 7.6;
       return _bmi.toStringAsFixed(1);
     } else if (gender == Gender.female) {
-      double _bmi = ((fatherHeight + motherHeight) / 2) - 7;
+      double _bmi = ((fatherHeight + motherHeight) / 2) - 7.6;
       return _bmi.toStringAsFixed(1);
     }
     return _bmi.toStringAsFixed(1);
