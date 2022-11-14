@@ -25,22 +25,16 @@ class Calculator {
   }
 
   String getResult() {
-    if (_bmi >= 25) {
-      return 'Overweight';
-    } else if (_bmi >= 18.5) {
-      return 'Normal';
-    } else {
-      return 'Underweight';
-    }
+    return "Your result is (in cm): ";
   }
 
   String getInterpretation() {
-    if (_bmi >= 25) {
-      return 'You have a higher than normal body weight. Try to exercise more.';
-    } else if (_bmi >= 18.5) {
-      return 'You have a normal body weight. Good job!';
+    if (gender == Gender.male) {
+      return 'Height prediction for male children based on parents height is shown above';
+    } else if (gender == Gender.female) {
+      return 'Height prediction for female children based on parents height is shown above';
     } else {
-      return 'You have a lower than normal body weight. You can eat a bit more.';
+      return '';
     }
   }
 }
