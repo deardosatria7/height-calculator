@@ -40,7 +40,7 @@ class _InputPageState extends State<InputPage> {
                         : inactiveCardColor,
                     cardChild: IconCard(
                       cardIcon: FontAwesomeIcons.mars,
-                      caption: 'MALE',
+                      caption: 'LAKI-LAKI',
                     ),
                     onPress: () {
                       setState(() {
@@ -56,7 +56,7 @@ class _InputPageState extends State<InputPage> {
                         : inactiveCardColor,
                     cardChild: IconCard(
                       cardIcon: FontAwesomeIcons.venus,
-                      caption: 'FEMALE',
+                      caption: 'PEREMPUAN',
                     ),
                     onPress: () {
                       setState(() {
