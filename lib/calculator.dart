@@ -3,16 +3,24 @@ import 'constants.dart';
 
 class Calculator {
   Calculator(
-      {required this.height, required this.weight, required this.gender});
+      {required this.fatherHeight,
+      required this.motherHeight,
+      required this.gender});
 
-  final int height;
-  final int weight;
+  final double fatherHeight;
+  final double motherHeight;
   final Gender gender;
 
   double _bmi = 0.0;
 
   String calculateBMI() {
-    _bmi = weight / pow(height / 100, 2);
+    if (gender == Gender.male) {
+      double _bmi = ((fatherHeight + motherHeight) / 2) + 7;
+      return _bmi.toStringAsFixed(1);
+    } else if (gender == Gender.female) {
+      double _bmi = ((fatherHeight + motherHeight) / 2) - 7;
+      return _bmi.toStringAsFixed(1);
+    }
     return _bmi.toStringAsFixed(1);
   }
 
