@@ -174,8 +174,8 @@ class _InputPageState extends State<InputPage> {
             buttonTitle: 'CALCULATE',
             onTap: () {
               Calculator cal = Calculator(
-                  fatherHeight: fatherHeight,
-                  motherHeight: motherHeight,
+                  fatherHeight: fatherHeight.toDouble(),
+                  motherHeight: motherHeight.toDouble(),
                   gender: selectedGender);
               String bmi = cal.calculateBMI();
               String result = cal.getResult();
