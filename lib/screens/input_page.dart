@@ -97,8 +97,8 @@ class _InputPageState extends State<InputPage> {
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
                       inactiveTrackColor: const Color(0xFF8D8E98),
-                      thumbColor: const Color(0xFFEB1555),
-                      overlayColor: const Color(0x29EB1555),
+                      thumbColor: const Color(0xFF24D876),
+                      overlayColor: Color.fromARGB(255, 16, 95, 52),
                       thumbShape:
                           const RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
@@ -148,8 +148,8 @@ class _InputPageState extends State<InputPage> {
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
                       inactiveTrackColor: const Color(0xFF8D8E98),
-                      thumbColor: const Color(0xFFEB1555),
-                      overlayColor: const Color(0x29EB1555),
+                      thumbColor: const Color(0xFF24D876),
+                      overlayColor: Color.fromARGB(255, 18, 105, 57),
                       thumbShape:
                           const RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
