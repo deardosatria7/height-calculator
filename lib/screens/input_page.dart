@@ -17,15 +17,15 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender = Gender.male;
-  int height = 160;
-  int weight = 60;
+  int fatherHeight = 160;
+  int motherHeight = 160;
   // int age = 20;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BMI CALCULATOR'),
+        title: const Text('HEIGHT PREDICTION CALCULATOR'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -75,7 +75,7 @@ class _InputPageState extends State<InputPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'HEIGHT',
+                    'FATHER`S HEIGHT',
                     style: labelTextStyle,
                   ),
                   Row(
@@ -84,7 +84,7 @@ class _InputPageState extends State<InputPage> {
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       Text(
-                        height.toString(),
+                        fatherHeight.toString(),
                         style: numberTextStyle,
                       ),
                       const Text(
@@ -105,12 +105,12 @@ class _InputPageState extends State<InputPage> {
                           const RoundSliderOverlayShape(overlayRadius: 30.0),
                     ),
                     child: Slider(
-                      value: height.toDouble(),
+                      value: fatherHeight.toDouble(),
                       min: 120.0,
                       max: 220.0,
                       onChanged: (double value) {
                         setState(() {
-                          height = value.round();
+                          fatherHeight = value.round();
                         });
                       },
                     ),
@@ -126,7 +126,7 @@ class _InputPageState extends State<InputPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'HEIGHT',
+                    'MOTHER`S HEIGHT',
                     style: labelTextStyle,
                   ),
                   Row(
@@ -135,7 +135,7 @@ class _InputPageState extends State<InputPage> {
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       Text(
-                        height.toString(),
+                        motherHeight.toString(),
                         style: numberTextStyle,
                       ),
                       const Text(
@@ -156,12 +156,12 @@ class _InputPageState extends State<InputPage> {
                           const RoundSliderOverlayShape(overlayRadius: 30.0),
                     ),
                     child: Slider(
-                      value: height.toDouble(),
+                      value: motherHeight.toDouble(),
                       min: 120.0,
                       max: 220.0,
                       onChanged: (double value) {
                         setState(() {
-                          height = value.round();
+                          motherHeight = value.round();
                         });
                       },
                     ),
@@ -174,7 +174,9 @@ class _InputPageState extends State<InputPage> {
             buttonTitle: 'CALCULATE',
             onTap: () {
               Calculator cal = Calculator(
-                  height: height, weight: weight, gender: selectedGender);
+                  fatherHeight: fatherHeight,
+                  motherHeight: motherHeight,
+                  gender: selectedGender);
               String bmi = cal.calculateBMI();
               String result = cal.getResult();
               String information = cal.getInterpretation();
